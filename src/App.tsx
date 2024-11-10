@@ -1,6 +1,7 @@
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HomePage } from './presentation/pages/HomePage';
+import { LandingPage } from './presentation/pages/LandingPage';
 import { GlobalStyle } from './presentation/styles/GlobalStyle';
 import styled, { ThemeProvider } from 'styled-components';
 import { Suspense } from 'react';
@@ -61,7 +62,8 @@ function App() {
           <AppContainer $isLoaded={true}>
             <Suspense fallback={<LoadingContainer>로딩 중...</LoadingContainer>}>
               <Routes>
-                <Route path="/" element={<HomePage />} />
+                <Route path="/" element={<LandingPage />} />
+                <Route path="/nba" element={<HomePage />} />
               </Routes>
             </Suspense>
           </AppContainer>
